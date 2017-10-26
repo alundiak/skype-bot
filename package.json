@@ -1,0 +1,25 @@
+{
+  "name": "skype-bot",
+  "version": "1.0.0",
+  "description": "NodeJS based Skype bot to create activity in chats",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alundiak/skype-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alundiak/skype-bot/issues"
+  },
+  "homepage": "https://github.com/alundiak/skype-bot#readme",
+  "dependencies": {
+    "botbuilder": "^3.11.0",
+    "express": "^4.16.2",
+    "restify": "^6.2.3"
+  }
+}
