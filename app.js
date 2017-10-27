@@ -4,7 +4,12 @@
 var builder = require('botbuilder');
 var restify = require('restify');
 
-const restifyServerPort = 3978;
+// var restifyServerPort = process.env.BOT_PORT || process.env.PORT || 3978;
+// Using BOT_PORT (3978) doesn't work on Heroku. It throws error, when real communication starts:
+// => dyno= connect= service= status=503 bytes= protocol=https
+// => Web process failed to bind to $PORT within 60 seconds of launch
+// That is why, maybe better to use process.env.PORT, which is random per Heroku (on localhost it's random also)
+var restifyServerPort = process.env.PORT; 
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -18,13 +23,13 @@ var connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-// Listen for messages from users 
-server.post('/api/messages', connector.listen());
-
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
     session.send("You said: %s", session.message.text);
 });
+
+// Listen for messages from users 
+server.post('/api/messages', connector.listen());
 
 // bot.dialog('greetings', [
 //     function (session) {
