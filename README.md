@@ -43,6 +43,8 @@ NodeJS based Skype bot to create activity in chats
 
 - [how to handle HTTP and HTTPS?](https://stackoverflow.com/questions/13186134/node-js-express-and-heroku-how-to-handle-http-and-https)
 - [HTTPS + SSL on Heroku - Node + Express](https://stackoverflow.com/questions/25148507/https-ssl-on-heroku-node-express)
+>When SSL (https) traffic comes in, it is "stopped" (terminated) at the server. That server opens a new http connection to your dyno, and whatever is gets it sends back over https to the client. So on your dyno you don't need to "mess" with certs etc, and you will be seeing only incoming http traffic: whether directly from http clients, or from Heroku servers who talk https to clients and http to you.
+- If no ngrok, then POST request to Heroku goes, but with error on server: `Error: connect ECONNREFUSED 127.0.0.1:64649`
 
 ## Azure based things
 - [Azure](https://portal.azure.com/)
