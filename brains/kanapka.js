@@ -20,9 +20,27 @@ module.exports = function(connector) {
         }
     ]);
 
+    // from https://github.com/Microsoft/BotBuilder/blob/master/Node/snippets/basics-greetingUsers-firstRun.js
+    // Add first run dialog
+    bot.dialog('firstRun', function(session) {
+        // Set firstRun flag to avoid being re-started every message.
+        session.userData.firstRun = true;
+        session.send("Hello :) I'm Kanapka Bot. I will update you regarding Pan(i) Kanapka arrival.").endDialog();
+    }).triggerAction({
+        onFindAction: function(context, callback) {
+            // Only trigger if we've never seen user before
+            if (!context.userData.firstRun) {
+                // Return a score of 1.1 to ensure the first run dialog wins
+                callback(null, 1.1);
+            } else {
+                callback(null, 0.0);
+            }
+        }
+    });
+
     bot.dialog('kanapka', [
         function(session) {
-            
+
             var customMessage = new builder.Message(session)
                 .text("**Hello**!")
                 .textFormat("markdown")

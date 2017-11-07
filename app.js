@@ -83,6 +83,10 @@ var setup_server = function(app) {
     console.log('setup_server CALL');
     // Routes
     app.get('/test/:name', respond);
+
+    // app.get('/', function(request, response) {
+    //     response.sendFile(path.join(__dirname + '/index.html'));
+    // });
 }
 setup_server(server);
 // setup_server(httpsServer);

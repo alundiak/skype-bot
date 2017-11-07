@@ -8,9 +8,11 @@ NodeJS based Skype bot to create activity in chats
 
 ## Emulator (for dev/test mode)
 - [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator)
+- Despite the fact URL to Skype Bot is with `https` in Bots Management, Emulator uses `http` and then together with `ngrok` it works.
 
 
 ## If Behind Firewall (optional)
+- Read first this `https://github.com/Microsoft/BotFramework-Emulator/wiki/Tunneling-(ngrok)`
 - Download and install https://ngrok.com/download
 
 
@@ -52,6 +54,7 @@ NodeJS based Skype bot to create activity in chats
 
 ## Other
 - Skype Bot using Python ad Skype4Py - https://github.com/opensourcehacker/sevabot
+- Skype Bot using simple Python - https://github.com/puneetsngh/pythonSkypeBot
 - Skype Bot using Java and Skype Kit (gone) - https://github.com/toomasr/skype-bot
 
 ## Resources

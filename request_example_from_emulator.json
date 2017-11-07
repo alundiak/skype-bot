@@ -1,0 +1,15 @@
+{
+  "type": "message",
+  "text": "wtf",
+  "from": {
+    "id": "default-user",
+    "name": "User"
+  },
+  "locale": "en-US",
+  "textFormat": "plain",
+  "timestamp": "2017-11-06T20:11:41.329Z",
+  "channelData": {
+    "clientActivityId": "1509997815897.36437889942190727.2"
+  },
+  "id": "nf1lggbhd5e"
+}

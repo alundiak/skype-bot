@@ -1,0 +1,21 @@
+{
+  "type": "message",
+  "text": "Hello :) I'm Kanapka Bot. I will update you regarding Pan(i) Kanapka arrival.",
+  "locale": "en-US",
+  "localTimestamp": "2017-11-06T23:10:37+01:00",
+  "from": {
+    "id": "default-bot",
+    "name": "Bot"
+  },
+  "recipient": {
+    "id": "default-user"
+  },
+  "inputHint": "acceptingInput",
+  "id": "kb60cej37cb5",
+  "replyToId": "9c8l67dla307",
+  "channelId": "emulator",
+  "timestamp": "2017-11-06T22:10:37.899Z",
+  "conversation": {
+    "id": "9dmlc78b9i8g"
+  }
+}
