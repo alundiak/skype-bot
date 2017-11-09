@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Kanapka Bot</title>
+    <title>Kanapka Bot</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-	<h1>Kanapka Bot Page</h1>
-
-	<span class="skype-button rectangle" data-bot-id="d60d43ae-da6d-406a-8bcb-97bcb8e29cfe" data-text="Kanapka"></span>
-	
-	<!-- No need of below, if predefined button used -->
-	<!-- <div class="skype-chat"></div> -->
-
-	<!-- This works, and secret is taken from "Web Chat Chanel" https://dev.botframework.com/bots/channels -->
-	<!-- <iframe src='https://webchat.botframework.com/embed/kanapka?s=cezoiq6KS0M.cwA.9Ys.EU6PzDQXigOXsLsK1lVa3bG1Mx55unBxmhPc8DINMkw'></iframe> -->
-<!-- 
-	<div>
+    <h1>Kanapka Bot Page</h1>
+    <!-- No need of below, if predefined button used -->
+    <!-- <div class="skype-chat"></div> -->
+    
+    <h2>"Web Chat Chanel"</h2>
+    <!-- https://dev.botframework.com/bots/channels -->
+    <iframe width="500" height="500" src='https://webchat.botframework.com/embed/kanapka?s=cezoiq6KS0M.cwA.9Ys.EU6PzDQXigOXsLsK1lVa3bG1Mx55unBxmhPc8DINMkw'>
+    </iframe>
+    
+    <h2>Skype Button (connected to logged in Skype User)</h2>
+    <span class="skype-button rectangle" data-bot-id="d60d43ae-da6d-406a-8bcb-97bcb8e29cfe" data-text="Kanapka"></span>
+    
+	<h2>Custom Send to Bot, and Bot to Skype Chat/Group</h2>
+    <div>
         <textarea cols="100" id="messageForBot">Pan(i) Kanapka arrived :)</textarea>
     </div>
     <div>
         <button id="sendToBot">Send Message to Skype Bot</button>
     </div>
-
-	<script src="index.js"></script> -->
-	<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+    
+    <script src="index.js"></script>
+    <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
 </body>
+
 </html>

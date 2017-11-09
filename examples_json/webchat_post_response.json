@@ -1,0 +1,27 @@
+{
+    "eventMessages": [
+    {
+        "id": 1030,
+        "type": "EventMessage",
+        "resourceType": "NewMessage",
+        "time": "2017-11-07T23:50:02Z",
+        "resourceLink": "https://db5-client-s.gateway.messenger.live.com/v1/users/ME/conversations/28:d60d43ae-da6d-406a-8bcb-97bcb8e29cfe/messages/1510098602952",
+        "resource":
+        {
+            "clientmessageid": "10116415426849638728",
+            "messagetype": "RichText",
+            "originalarrivaltime": "2017-11-07T23:50:02.642Z",
+            "version": "1510098602952",
+            "contenttype": "text",
+            "origincontextid": "0",
+            "isactive": true,
+            "from": "https://db5-client-s.gateway.messenger.live.com/v1/users/ME/contacts/28:d60d43ae-da6d-406a-8bcb-97bcb8e29cfe",
+            "id": "1510098602952",
+            "conversationLink": "https://db5-client-s.gateway.messenger.live.com/v1/users/ME/conversations/28:d60d43ae-da6d-406a-8bcb-97bcb8e29cfe",
+            "type": "Message",
+            "imdisplayname": "Kanapka Bot",
+            "ackrequired": "https://db5-client-s.gateway.messenger.live.com/v1/users/ME/conversations/ALL/messages/1510098602952/ack",
+            "content": "Do not write &apos;bad&apos; words in chat :)",
+            "composetime": "2017-11-07T23:50:02.642Z"
+        }
+    }]

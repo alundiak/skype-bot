@@ -25,11 +25,19 @@ NodeJS based Skype bot to create activity in chats
 - Default url/host for messages listening/broadcasting - `http://localhost:3978/api/messages`
 - `botbuilder` has built-in support for powerful AI frameworks such as LUIS.
 - Emulator works ok locally with HTTP server, but on Heroku it requires HTTPS.
+- Link ["Add Bot to Contacts"](https://join.skype.com/bot/d60d43ae-da6d-406a-8bcb-97bcb8e29cfe)
+
+## NodeJS based Bot Examples
+-- https://github.com/kiramishima/acopiobot
 
 ## SSL Self-Signed Certificate 
 - [Quick guide on how to set up a self-signed SSL certificate on Ubuntu](http://qugstart.com/blog/linux/quickest-way-to-create-a-self-signed-ssl-certificate-in-ubuntu/)
 - [Node.js and RESTify Server with both HTTP and HTTPS](http://qugstart.com/blog/node-js/node-js-restify-server-with-both-http-and-https/)
 
+## DirectLineJS
+- npm module [botFramework-directLinejs](https://github.com/Microsoft/BotFramework-DirectLineJS)
+- https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-DirectLine
+- https://github.com/Microsoft/BotFramework-DirectLineJS
 
 ## Bot Related Services
 - [Bot Framework Portal](https://dev.botframework.com/) (where we have [My Bots](https://dev.botframework.com/bots) page)

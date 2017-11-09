@@ -77,14 +77,17 @@ module.exports = function(connector) {
         var str = `Global help menu.
             <br/> - "Hey Kanapka?" or "kanapka:" are phrases to trigger Bot Kanapka.
             <br/> - "help" prints this helpfull list.
+            <br/> - "firstRun" descr TBD
             <br/> - "wtf" just a cursing checker.
+            <br/> - "test" test custom action.
+            <br/> - "goodbye" or "bye" just a cursing checker.
             `;
         session.endDialog(str);
         // TODO
     }).triggerAction({
         matches: /^help$/i,
         onSelectAction: (session, args, next) => {
-            console.log(args);
+            console.log(session);
             // Add the help dialog to the top of the dialog stack 
             // (override the default behavior of replacing the stack)
             session.beginDialog(args.action, args);
@@ -93,12 +96,27 @@ module.exports = function(connector) {
         }
     });
 
+    // Works in Group chat if @Kanapka
     bot.customAction({
         matches: /wtf|wtf?/gi,
         onSelectAction: (session, args, next) => {
+            console.log(args);
             session.send("Do not write 'bad' words in chat :)");
         }
-    })
+    });
+
+    bot.customAction({
+        matches: /test?/gi,
+        onSelectAction: (session, args, next) => {
+            console.log(session);
+            session.send("Test Custom Action");
+        }
+    });
+
+    // https://github.com/Microsoft/BotBuilder/blob/master/Node/snippets/basics-endingConversations.js
+    bot.endConversationAction('goodbyeAction', "Ok... See you next time.", { 
+        matches: /^goodbye|bye/i 
+    });
 
     return bot;
 }
