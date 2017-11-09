@@ -28,7 +28,7 @@ NodeJS based Skype bot to create activity in chats
 - Link ["Add Bot to Contacts"](https://join.skype.com/bot/d60d43ae-da6d-406a-8bcb-97bcb8e29cfe)
 
 ## NodeJS based Bot Examples
--- https://github.com/kiramishima/acopiobot
+- https://github.com/kiramishima/acopiobot
 
 ## SSL Self-Signed Certificate 
 - [Quick guide on how to set up a self-signed SSL certificate on Ubuntu](http://qugstart.com/blog/linux/quickest-way-to-create-a-self-signed-ssl-certificate-in-ubuntu/)
@@ -44,6 +44,13 @@ NodeJS based Skype bot to create activity in chats
 - [Application Registration Portal](https://apps.dev.microsoft.com/#/appList) where we have applications listed
 - [Dev WebControl Generator](https://dev.skype.com/webcontrol)
 - [HTML code snippet builder](https://latest-swx.cdn.skype.com/lwc/sdk/0.0.835/index-builder.html)
+
+
+## Curl
+https://docs.microsoft.com/en-us/bot-framework/troubleshoot-authentication-problems
+```
+curl -k -X POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token -d "grant_type=client_credentials&client_id=APP_ID&client_secret=APP_PASSWORD&scope=https%3A%2F%2Fapi.botframework.com%2F.default"
+```
 
 ## Deployment to Heroku
 - Locally, to works with http, but on remote Heroku instance, it requires https, to be called from Skype API.

@@ -1,0 +1,15 @@
+429 ?
+
+2017-11-09T22:45:34.706095+00:00 app[web.1]: Error: Request to 'https://ba344b6b.ngrok.io/v3/botstate/emulator/conversations/9kg279mc5jdm/users/default-user' failed: [429] Too Many Requests
+2017-11-09T22:45:34.706113+00:00 app[web.1]:     at Request._callback (/app/node_modules/botbuilder/lib/bots/ChatConnector.js:532:46)
+2017-11-09T22:45:34.706115+00:00 app[web.1]:     at Request.self.callback (/app/node_modules/request/request.js:186:22)
+2017-11-09T22:45:34.706116+00:00 app[web.1]:     at emitTwo (events.js:106:13)
+2017-11-09T22:45:34.706117+00:00 app[web.1]:     at Request.emit (events.js:191:7)
+2017-11-09T22:45:34.706118+00:00 app[web.1]:     at Request.<anonymous> (/app/node_modules/request/request.js:1163:10)
+2017-11-09T22:45:34.706119+00:00 app[web.1]:     at emitOne (events.js:96:13)
+2017-11-09T22:45:34.706119+00:00 app[web.1]:     at Request.emit (events.js:188:7)
+2017-11-09T22:45:34.706120+00:00 app[web.1]:     at IncomingMessage.<anonymous> (/app/node_modules/request/request.js:1085:12)
+2017-11-09T22:45:34.706121+00:00 app[web.1]:     at IncomingMessage.g (events.js:292:16)
+2017-11-09T22:45:34.706121+00:00 app[web.1]:     at emitNone (events.js:91:20)
+
+

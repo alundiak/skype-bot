@@ -4,7 +4,7 @@
   "description": "NodeJS based Skype bot to create activity in chats",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server-restify.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,8 @@
   "homepage": "https://github.com/alundiak/skype-bot#readme",
   "dependencies": {
     "botbuilder": "^3.11.0",
+    "botbuilder-azure": "^3.0.4",
+    "botbuilder-calling": "^3.0.1",
     "express": "^4.16.2",
     "restify": "^6.2.3"
   }
