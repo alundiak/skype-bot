@@ -68,6 +68,8 @@ var youSaidLogic = function(session) {
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new BotBrain(connector);
+// TODO - research, test, verify
+// bot.use(builder.Middleware.dialogVersion({ version: 0.2, resetCommand: /^reset/i }));
 
 
 // Listen for messages from users 
@@ -80,7 +82,7 @@ var setup_server = function(app) {
         res.send('I see you ' + req.params.name);
     }
 
-    console.log('setup_server CALL');
+    // console.log('setup_server CALL');
     // Routes
     app.get('/test/:name', respond);
 

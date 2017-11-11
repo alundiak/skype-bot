@@ -13,3 +13,32 @@
 2017-11-09T22:45:34.706121+00:00 app[web.1]:     at emitNone (events.js:91:20)
 
 
+2017-11-11T01:01:00.403460+00:00 app[web.1]: 
+2017-11-11T01:01:00.403462+00:00 app[web.1]: <<<===PYTHON USER ?
+2017-11-11T01:01:00.403462+00:00 app[web.1]: <<<===
+2017-11-11T01:01:00.403463+00:00 app[web.1]: 
+2017-11-11T01:01:01.243216+00:00 app[web.1]: Error: Request to 'https://smba.trafficmanager.net/apis/v3/conversations/29%3A1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI/activities' failed: [400] Bad Request
+2017-11-11T01:01:01.243230+00:00 app[web.1]:     at Request._callback (/app/node_modules/botbuilder/lib/bots/ChatConnector.js:532:46)
+2017-11-11T01:01:01.243231+00:00 app[web.1]:     at Request.self.callback (/app/node_modules/request/request.js:186:22)
+2017-11-11T01:01:01.243232+00:00 app[web.1]:     at emitTwo (events.js:106:13)
+2017-11-11T01:01:01.243232+00:00 app[web.1]:     at Request.emit (events.js:191:7)
+2017-11-11T01:01:01.243233+00:00 app[web.1]:     at Request.<anonymous> (/app/node_modules/request/request.js:1163:10)
+2017-11-11T01:01:01.243234+00:00 app[web.1]:     at emitOne (events.js:96:13)
+2017-11-11T01:01:01.243235+00:00 app[web.1]:     at Request.emit (events.js:188:7)
+2017-11-11T01:01:01.243235+00:00 app[web.1]:     at IncomingMessage.<anonymous> (/app/node_modules/request/request.js:1085:12)
+2017-11-11T01:01:01.243236+00:00 app[web.1]:     at IncomingMessage.g (events.js:292:16)
+2017-11-11T01:01:01.243237+00:00 app[web.1]:     at emitNone (events.js:91:20)
+
+
+2017-11-11T01:14:00.165275+00:00 app[web.1]: Error: Request to 'https://ba344b6b.ngrok.io/v3/botstate/emulator/conversations/kfl690j9m91g' failed: [429] Too Many Requests
+2017-11-11T01:14:00.165296+00:00 app[web.1]:     at Request._callback (/app/node_modules/botbuilder/lib/bots/ChatConnector.js:532:46)
+2017-11-11T01:14:00.165298+00:00 app[web.1]:     at Request.self.callback (/app/node_modules/request/request.js:186:22)
+2017-11-11T01:14:00.165299+00:00 app[web.1]:     at emitTwo (events.js:106:13)
+2017-11-11T01:14:00.165300+00:00 app[web.1]:     at Request.emit (events.js:191:7)
+2017-11-11T01:14:00.165301+00:00 app[web.1]:     at Request.<anonymous> (/app/node_modules/request/request.js:1163:10)
+2017-11-11T01:14:00.165302+00:00 app[web.1]:     at emitOne (events.js:96:13)
+2017-11-11T01:14:00.165302+00:00 app[web.1]:     at Request.emit (events.js:188:7)
+2017-11-11T01:14:00.165303+00:00 app[web.1]:     at IncomingMessage.<anonymous> (/app/node_modules/request/request.js:1085:12)
+2017-11-11T01:14:00.165303+00:00 app[web.1]:     at IncomingMessage.g (events.js:292:16)
+2017-11-11T01:14:00.165304+00:00 app[web.1]:     at emitNone (events.js:91:20)
+

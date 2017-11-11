@@ -19,6 +19,8 @@ NodeJS based Skype bot to create activity in chats
 ## BotBuilder with NodeJS
 - [Bot Builder SDK for Node.js](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-overview)
 - [NodeJS example of `app.js`](https://github.com/Microsoft/BotBuilder/blob/master/Node/examples/demo-skype/app.js) for Bot working with Skype.
+- [How to build skype bot with nodejs?](https://medium.com/@AmJustSam/how-to-build-skype-bot-with-nodejs-ddec8372114c) [medium.com]
+- [A NodeJS chatbot tutorial – Part 1](https://blog.recast.ai/nodejs-bot-tutorial-1/) (Facebooks Aps, [Recast.AI](https://github.com/recastAI))
 
 
 ## Bot instance details
@@ -34,10 +36,11 @@ NodeJS based Skype bot to create activity in chats
 - [Quick guide on how to set up a self-signed SSL certificate on Ubuntu](http://qugstart.com/blog/linux/quickest-way-to-create-a-self-signed-ssl-certificate-in-ubuntu/)
 - [Node.js and RESTify Server with both HTTP and HTTPS](http://qugstart.com/blog/node-js/node-js-restify-server-with-both-http-and-https/)
 
-## DirectLineJS
+## DirectLineJS, WebChat, backchannel
 - npm module [botFramework-directLinejs](https://github.com/Microsoft/BotFramework-DirectLineJS)
 - https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-DirectLine
 - https://github.com/Microsoft/BotFramework-DirectLineJS
+- https://github.com/ryanvolum/backChannelBot
 
 ## Bot Related Services
 - [Bot Framework Portal](https://dev.botframework.com/) (where we have [My Bots](https://dev.botframework.com/bots) page)

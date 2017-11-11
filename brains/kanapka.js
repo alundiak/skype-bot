@@ -1,25 +1,34 @@
 module.exports = function(connector) {
     var builder = require('botbuilder');
 
-    // This is a dinner reservation bot that uses multiple dialogs to prompt users for input.
-    var bot = new builder.UniversalBot(connector, [
-        /*
-                function(session) {
-                    // console.log('1st step');
+    var waterfalSteps = [
+        function(session) {
+            // step 1
+        },
+        function(session, results) {
+            // step 2
+        },
+        function(session, results) {
+            // step 3
+        },
+        function(session, results) {
+            // step 3
+        }
+    ];
 
-                    // session.send("This is Kanapka Bot. Stay tuned! More will be soon :)");
-                    // session.beginDialog('askForDateTime');
-                },
-                function(session, results) {
+    var justSingleHandler = function (session) {
+        session.sendTyping();
+        // setTimeout(function () {
+        //     session.send("Hello there...");
+        // }, 3000);
+    }
 
-                },
-                function(session, results) {
 
-                },
-                function(session, results) {
-
-                }*/
-    ]);
+    // Bot Instance via UniversalBot constructor by 2nd param receive either:
+    // waterfallSteps - aka dialogs by start
+    // or empty array - meaning no steps - empty waterfall.
+    // or function - single handler
+    var bot = new builder.UniversalBot(connector, justSingleHandler);
 
     /*
         - Actions work in Group chat when mentioned @Kanapka and in private dialogs/chats, when just typed text
@@ -29,11 +38,12 @@ module.exports = function(connector) {
     // https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events
     bot.on('conversationUpdate', function(message) {
         console.log(message);
+        // why message.membersAdded here when I restart localhost emulator or refresh page with DirectLine request?
         if (message.membersAdded && message.membersAdded.length > 0) {
             // Say hello
             var isGroup = message.address.conversation.isGroup;
             console.log('IS GROUP: ' + isGroup);
-            var txt = isGroup ? "Hello everyone!" : "Hi... I'm Back from restart.";
+            var txt = isGroup ? "Hello everyone!" : "Conversion updated... Members added: " + message.membersAdded[0].name;
             var reply = new builder.Message()
                 .address(message.address)
                 .text(txt);
@@ -54,7 +64,7 @@ module.exports = function(connector) {
         }
     });
 
-    // https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events
+    // // https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events
     bot.on('contactRelationUpdate', function(message) {
         console.log(message);
         if (message.action === 'add') {
@@ -66,12 +76,57 @@ module.exports = function(connector) {
         }
     });
 
+    bot.on('typing', function (message) {
+        console.log(message);
+    });
+
+    //
+    // https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-backchannel
+    // https://github.com/Microsoft/BotFramework-WebChat/blob/master/samples/backchannel/index.html
+    // https://github.com/ryanvolum/backChannelBot/blob/master/app.js
+    // 
+    //Creates a backchannel event
+    const createEvent = (eventName, value, address) => {
+        var msg = new builder.Message().address(address);
+        msg.data.type = "event";
+        msg.data.name = eventName;
+        msg.data.value = value;
+        return msg;
+    }
+
+    //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
+    bot.on("event", function(message) {
+        console.log("EVENT LISTENER 1", message);
+        // var msg = new builder.Message().address(message.address);
+        // msg.textLocale("en-us");
+        // if (message.name === "buttonClicked") {
+        //     msg.text("I see that you just pushed that button");
+        // }
+        // bot.send(msg);
+    });
+
+    //Basic root dialog which takes an inputted color and sends a changeBackground event. No NLP, regex, validation here - just grabs input and sends it back as an event. 
+    bot.dialog(':custom', [
+        function(session) {
+            console.log(session.message)
+            var reply = createEvent("changeBackground", session.message.text, session.message.address);
+            session.endDialog(reply);
+        }
+    ]).triggerAction({
+        matches: /^custom/i,
+        onSelectAction: (session, args, next) => {
+            console.log(session.message);
+            session.beginDialog(":kanapka_face_detected");
+            
+        }
+    });
+
     // TODO OTHER EVENTS
 
     // https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events
     // from https://github.com/Microsoft/BotBuilder/blob/master/Node/snippets/basics-greetingUsers-firstRun.js
     // Add first run dialog
-    bot.dialog('firstRun', function(session) {
+    bot.dialog(':firstRun', function(session) {
         // Set firstRun flag to avoid being re-started every message.
         session.userData.firstRun = true;
         session.send("Hello :) I'm Kanapka Bot. I will update you about Pan(i) Kanapka arrival.").endDialog();
@@ -89,7 +144,7 @@ module.exports = function(connector) {
     });
 
     //root dialog
-    bot.dialog("/kanapka_face_detected", function(session) {
+    bot.dialog(":kanapka_face_detected", function(session) {
 
         // ideally, we may receive channelId=skype, conversationId=TBD from Python, 
         // and it should be in session.userData or session.state
@@ -111,7 +166,7 @@ module.exports = function(connector) {
 
     });
 
-    bot.dialog('/kanapka', function(session) {
+    bot.dialog(':kanapka', function(session) {
         var customMessage = new builder.Message(session)
             .text("**kanapka is in progress**!")
             .textFormat("markdown")
@@ -135,23 +190,81 @@ module.exports = function(connector) {
     bot.customAction({
         matches: /wtf|wtf?/gi,
         onSelectAction: (session, args, next) => {
+            session.sendTyping();
             console.log(args);
             session.send("Do not write 'bad' words in chat :)");
         }
     });
 
+    bot.on("event", function(message) {
+        console.log("EVENT LISTENER 2", message);
+
+        var msg = new builder.Message().address(message.address);
+        console.log('MSG>>>>>>>>>>>>>>>>>>', msg);
+        msg.textLocale("en-us");
+        if (message.name === "alertSkypeChat") {
+            msg.text("I'm very close...");
+        }
+        bot.send(msg);
+    });
+
     bot.customAction({
         matches: /eat|food/gi,
         onSelectAction: (session, args, next) => {
+            session.sendTyping();
             console.log('\n===>>>\nSESSION\n===>>>\n');
             console.log(session);
             console.log('\n<<<===\nSESSION\n<<<===\n');
 
             console.log('\n===>>>\nMESSAGE\n===>>>\n');
             console.log(session.message);
-            console.log('\n<<<===\nSESSION\n<<<===\n');
+            console.log('\n<<<===\nMESSAGE\n<<<===\n');
 
-            session.send("Maybe order kanapka?");
+            console.log('\n<<<===\PYTHON USER ?\n<<<===\n');
+
+            // var msgEvent = new builder.Message().address(session.message.address);
+            // msgEvent.data.type = "event";
+            // msgEvent.data.name = "alertSkypeChat";
+            // msgEvent.data.value = 'testValue';
+            // // looks like msgEvent.data will become message in event listener
+            // session.send(msgEvent);
+
+            // https://docs.botframework.com/en-us/node/builder/chat-reference/interfaces/_botbuilder_d_.imessage.html
+            // In the reactive case the you should copy the address field from the incoming message to the outgoing message 
+            // (if you use the Message builder class and initialize it with the session this will happen automatically) 
+            // and then set the text or attachments. For proactive messages you’ll need save the address from the incoming message 
+            // to an external storage somewhere. You can then later pass this in to UniversalBot.beginDialog() or copy it to an 
+            // outgoing message passed to UniversalBot.send().
+            // Composing a message to the user using the incoming address object will by default send a reply to the user in the 
+            // context of the current conversation. Some channels allow for the starting of new conversations with the user. 
+            // To start a new proactive conversation with the user simply delete the conversation field from the address object 
+            // before composing the outgoing message.
+            
+            session.userData.addressBackup = session.message.address;
+            console.log(session.userData.addressBackup);
+
+            // if DirectLineJS,. then bot is different:
+            //  bot: { id: 'kanapka@gUY0MKhYruE', name: 'Kanapka' },
+
+            var changedAddress = session.message.address;
+            changedAddress.channelId = 'skype';
+            delete changedAddress.conversation;
+            changedAddress.conversation = {
+                // id: "29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI" // - me
+                id: "19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype" // - chat
+            };
+            changedAddress.bot = { id: 'kanapka', name: 'Kanapka' };
+
+            var msg = new builder.Message().address(changedAddress);
+            msg.text("This message sent by Skype Bot triggered by DirectLineJS API with hardcoded conversation.id");
+            console.log(msg);
+            console.log(msg.data.address);
+            console.log(msg.data.address.conversation);
+            // msg.data.name = "alertSkypeChat";
+            // msg.data.value = 'testValue';
+            session.send(msg);
+
+            // session.send("Maybe order kanapka?");
         }
     });
 
@@ -163,6 +276,7 @@ module.exports = function(connector) {
     bot.customAction({
         matches: /help/gi,
         onSelectAction: function(session, args, next) {
+            session.sendTyping();
             console.log(session);
 
             // there is "firstRun" initial dialog/action upon starting server/session or add bot to chat. EXPERIMENTAL. Not stable.

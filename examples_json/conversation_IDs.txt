@@ -99,58 +99,63 @@ From Skype 1-to-1 with @Kanapka
 
 From Skype in chat by mentioning @Kanapka
 
-2017-11-09T23:15:10.958975+00:00 app[web.1]:   message: 
-2017-11-09T23:15:10.958976+00:00 app[web.1]:    { text: '@Kanapka food',
-2017-11-09T23:15:10.958976+00:00 app[web.1]:      type: 'message',
-2017-11-09T23:15:10.958977+00:00 app[web.1]:      timestamp: '2017-11-09T23:15:10.576Z',
-2017-11-09T23:15:10.958977+00:00 app[web.1]:      entities: [ [Object], [Object] ],
-2017-11-09T23:15:10.958978+00:00 app[web.1]:      sourceEvent: { text: '<at id="28:d60d43a...b8e29cfe">@Kanapka</at> food' },
-2017-11-09T23:15:10.958979+00:00 app[web.1]:      attachments: [],
-2017-11-09T23:15:10.958980+00:00 app[web.1]:      address: 
-2017-11-09T23:15:10.958980+00:00 app[web.1]:       { id: '1510269310420',
-2017-11-09T23:15:10.958981+00:00 app[web.1]:         channelId: 'skype',
-2017-11-09T23:15:10.958981+00:00 app[web.1]:         user: [Object],
-2017-11-09T23:15:10.958982+00:00 app[web.1]:         conversation: [Object],
-2017-11-09T23:15:10.958983+00:00 app[web.1]:         bot: [Object],
-2017-11-09T23:15:10.958983+00:00 app[web.1]:         serviceUrl: 'https://smba.trafficmanager.net/apis/' },
-2017-11-09T23:15:10.958984+00:00 app[web.1]:      source: 'skype',
-2017-11-09T23:15:10.958984+00:00 app[web.1]:      agent: 'botbuilder',
-2017-11-09T23:15:10.958985+00:00 app[web.1]:      user: 
-2017-11-09T23:15:10.958985+00:00 app[web.1]:       { id: '29:1HTjE6Ul...',
-2017-11-09T23:15:10.958986+00:00 app[web.1]:         name: 'Andrii Lundiak' } } }
-2017-11-09T23:15:10.959012+00:00 app[web.1]: { text: '@Kanapka food',
-2017-11-09T23:15:10.959014+00:00 app[web.1]:   type: 'message',
-2017-11-09T23:15:10.959015+00:00 app[web.1]:   timestamp: '2017-11-09T23:15:10.576Z',
-2017-11-09T23:15:10.959015+00:00 app[web.1]:   entities: 
-2017-11-09T23:15:10.959016+00:00 app[web.1]:    [ { mentioned: [Object],
-2017-11-09T23:15:10.959017+00:00 app[web.1]:        text: '<at id="28:d60d4...e29cfe">@Kanapka</at>',
-2017-11-09T23:15:10.959017+00:00 app[web.1]:        type: 'mention' },
-2017-11-09T23:15:10.959018+00:00 app[web.1]:      { locale: 'en-US',
-2017-11-09T23:15:10.959018+00:00 app[web.1]:        country: 'PL',
-2017-11-09T23:15:10.959019+00:00 app[web.1]:        platform: 'Windows',
-2017-11-09T23:15:10.959019+00:00 app[web.1]:        type: 'clientInfo' } ],
-2017-11-09T23:15:10.959020+00:00 app[web.1]:   sourceEvent: { text: '<at id="28:d60d4....b8e29cfe">@Kanapka</at> food' },
-2017-11-09T23:15:10.959021+00:00 app[web.1]:   attachments: [],
-2017-11-09T23:15:10.959021+00:00 app[web.1]:   address: 
-2017-11-09T23:15:10.959022+00:00 app[web.1]:    { id: '1510269310420',
-2017-11-09T23:15:10.959023+00:00 app[web.1]:      channelId: 'skype',
-2017-11-09T23:15:10.959023+00:00 app[web.1]:      user: 
-2017-11-09T23:15:10.959024+00:00 app[web.1]:       { id: '29:1HTjE6Ul1MDfAzZcwr...vmHnI',
-2017-11-09T23:15:10.959025+00:00 app[web.1]:         name: 'Andrii Lundiak' },
-2017-11-09T23:15:10.959025+00:00 app[web.1]:      conversation: 
-2017-11-09T23:15:10.959026+00:00 app[web.1]:       { isGroup: true,
-2017-11-09T23:15:10.959026+00:00 app[web.1]:         id: '19:8ee6791956e.....1b@thread.skype' },
-2017-11-09T23:15:10.959027+00:00 app[web.1]:      bot: 
-2017-11-09T23:15:10.959027+00:00 app[web.1]:       { id: '28:d60d43ae-da.....29cfe',
-2017-11-09T23:15:10.959028+00:00 app[web.1]:         name: 'Kanapka' },
-2017-11-09T23:15:10.959029+00:00 app[web.1]:      serviceUrl: 'https://smba.trafficmanager.net/apis/' },
-2017-11-09T23:15:10.959029+00:00 app[web.1]:   source: 'skype',
-2017-11-09T23:15:10.959030+00:00 app[web.1]:   agent: 'botbuilder',
-2017-11-09T23:15:10.959030+00:00 app[web.1]:   user: 
-2017-11-09T23:15:10.959031+00:00 app[web.1]:    { id: '29:1HTjE....9vRtvmHnI',
-2017-11-09T23:15:10.959031+00:00 app[web.1]:      name: 'Andrii Lundiak' } }
-2017-11-09T23:15:10.959032+00:00 app[web.1]: undefined
+2017-11-09T23:41:41.808637+00:00 app[web.1]: { text: '@KanapkaI wanna eat',
+2017-11-09T23:41:41.808638+00:00 app[web.1]:   type: 'message',
+2017-11-09T23:41:41.808638+00:00 app[web.1]:   timestamp: '2017-11-09T23:41:41.441Z',
+2017-11-09T23:41:41.808639+00:00 app[web.1]:   entities: 
+2017-11-09T23:41:41.808639+00:00 app[web.1]:    [ { mentioned: [Object],
+2017-11-09T23:41:41.808640+00:00 app[web.1]:        text: '<at id="28:d60d43a,,fe">@Kanapka</at>',
+2017-11-09T23:41:41.808640+00:00 app[web.1]:        type: 'mention' },
+2017-11-09T23:41:41.808640+00:00 app[web.1]:      { locale: 'en-US',
+2017-11-09T23:41:41.808641+00:00 app[web.1]:        country: 'PL',
+2017-11-09T23:41:41.808641+00:00 app[web.1]:        platform: 'Windows',
+2017-11-09T23:41:41.808641+00:00 app[web.1]:        type: 'clientInfo' } ],
+2017-11-09T23:41:41.808642+00:00 app[web.1]:   sourceEvent: { text: '<at id="28:d60d43ae-da6d-406a-8bcb-...">@Kanapka</at>I wanna eat' },
+2017-11-09T23:41:41.808642+00:00 app[web.1]:   attachments: [],
+2017-11-09T23:41:41.808642+00:00 app[web.1]:   address: 
+2017-11-09T23:41:41.808643+00:00 app[web.1]:    { id: '1510270901446',
+2017-11-09T23:41:41.808643+00:00 app[web.1]:      channelId: 'skype',
+2017-11-09T23:41:41.808643+00:00 app[web.1]:      user: 
+2017-11-09T23:41:41.808644+00:00 app[web.1]:       { id: '29:1HTjE...REzF_b8o9vRtvmHnI',
+2017-11-09T23:41:41.808644+00:00 app[web.1]:         name: 'Andrii Lundiak' },
+2017-11-09T23:41:41.808644+00:00 app[web.1]:      conversation: 
+2017-11-09T23:41:41.808645+00:00 app[web.1]:       { isGroup: true,
+2017-11-09T23:41:41.808645+00:00 app[web.1]:         id: '19:8ee6791956ef48d...c1c91f1b@thread.skype' },
+2017-11-09T23:41:41.808645+00:00 app[web.1]:      bot: 
+2017-11-09T23:41:41.808646+00:00 app[web.1]:       { id: '28:d60d43a,,8e29cfe',
+2017-11-09T23:41:41.808646+00:00 app[web.1]:         name: 'Kanapka' },
+2017-11-09T23:41:41.808646+00:00 app[web.1]:      serviceUrl: 'https://smba.trafficmanager.net/apis/' },
+2017-11-09T23:41:41.808647+00:00 app[web.1]:   source: 'skype',
+2017-11-09T23:41:41.808647+00:00 app[web.1]:   agent: 'botbuilder',
+2017-11-09T23:41:41.808647+00:00 app[web.1]:   user: 
+2017-11-09T23:41:41.808648+00:00 app[web.1]:    { id: '29:1HTjE6Ul1MDfAzZ..I',
+2017-11-09T23:41:41.808648+00:00 app[web.1]:      name: 'Andrii Lundiak' } }
 
 
+WEBCHAT message from web page and sent to Kanapka bot and to Kanapka Skype contact
 
-
+017-11-11T02:31:42.122099+00:00 app[web.1]: Message {
+2017-11-11T02:31:42.122101+00:00 app[web.1]:   session: undefined,
+2017-11-11T02:31:42.122101+00:00 app[web.1]:   data: 
+2017-11-11T02:31:42.122102+00:00 app[web.1]:    { type: 'message',
+2017-11-11T02:31:42.122102+00:00 app[web.1]:      agent: 'botbuilder',
+2017-11-11T02:31:42.122103+00:00 app[web.1]:      address: 
+2017-11-11T02:31:42.122104+00:00 app[web.1]:       { id: '1510367501384',
+2017-11-11T02:31:42.122104+00:00 app[web.1]:         channelId: 'skype',
+2017-11-11T02:31:42.122105+00:00 app[web.1]:         user: [Object],
+2017-11-11T02:31:42.122105+00:00 app[web.1]:         bot: [Object],
+2017-11-11T02:31:42.122106+00:00 app[web.1]:         serviceUrl: 'https://smba.trafficmanager.net/apis/',
+2017-11-11T02:31:42.122106+00:00 app[web.1]:         conversation: [Object] },
+2017-11-11T02:31:42.122107+00:00 app[web.1]:      source: 'skype',
+2017-11-11T02:31:42.122107+00:00 app[web.1]:      text: 'alertSkypeChat ho ho' } }
+2017-11-11T02:31:42.122343+00:00 app[web.1]: { id: '1510367501384',
+2017-11-11T02:31:42.122344+00:00 app[web.1]:   channelId: 'skype',
+2017-11-11T02:31:42.122345+00:00 app[web.1]:   user: 
+2017-11-11T02:31:42.122346+00:00 app[web.1]:    { id: '29:1HTjE6U...vRtvmHnI',
+2017-11-11T02:31:42.122346+00:00 app[web.1]:      name: 'Andrii Lundiak' },
+2017-11-11T02:31:42.122347+00:00 app[web.1]:   bot: 
+2017-11-11T02:31:42.122347+00:00 app[web.1]:    { id: '28:d60d43a....bcb8e29cfe',
+2017-11-11T02:31:42.122348+00:00 app[web.1]:      name: 'Kanapka' },
+2017-11-11T02:31:42.122349+00:00 app[web.1]:   serviceUrl: 'https://smba.trafficmanager.net/apis/',
+2017-11-11T02:31:42.122349+00:00 app[web.1]:   conversation: { id: '29:1HTjE6....9vRtvmHnI' } }
+2017-11-11T02:31:42.122439+00:00 app[web.1]: { id: '29:1HTjE6U.....vRtvmHnI' }
