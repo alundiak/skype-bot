@@ -159,3 +159,72 @@ WEBCHAT message from web page and sent to Kanapka bot and to Kanapka Skype conta
 2017-11-11T02:31:42.122349+00:00 app[web.1]:   serviceUrl: 'https://smba.trafficmanager.net/apis/',
 2017-11-11T02:31:42.122349+00:00 app[web.1]:   conversation: { id: '29:1HTjE6....9vRtvmHnI' } }
 2017-11-11T02:31:42.122439+00:00 app[web.1]: { id: '29:1HTjE6U.....vRtvmHnI' }
+
+
+From WebCHat
+
+2017-11-11T02:44:33.211066+00:00 app[web.1]: { id: 'Iy3y1z5n4Cb50a616kRUQX|0000003',
+2017-11-11T02:44:33.211066+00:00 app[web.1]:   channelId: 'webchat',
+2017-11-11T02:44:33.211067+00:00 app[web.1]:   user: { id: 'CrnkcJeeQ3e', name: 'You' },
+2017-11-11T02:44:33.211067+00:00 app[web.1]:   conversation: { id: 'Iy3y1z5n4Cb50a616kRUQX' },
+
+2017-11-11T02:44:33.211068+00:00 app[web.1]:   bot: { id: 'kanapka@Ul229Bk3EVs', name: 'Kanapka' }, - AND THAT IS WHY it DOENS"T GOT TO CHAT with guys, because it's another Kanapka Bot instance - from WebChat
+
+2017-11-11T02:44:33.211068+00:00 app[web.1]:   serviceUrl: 'https://webchat.botframework.com/' }
+2017-11-11T02:44:33.211397+00:00 app[web.1]: Message {
+2017-11-11T02:44:33.211398+00:00 app[web.1]:   session: undefined,
+2017-11-11T02:44:33.211399+00:00 app[web.1]:   data: 
+2017-11-11T02:44:33.211399+00:00 app[web.1]:    { type: 'message',
+2017-11-11T02:44:33.211400+00:00 app[web.1]:      agent: 'botbuilder',
+2017-11-11T02:44:33.211400+00:00 app[web.1]:      address: 
+2017-11-11T02:44:33.211401+00:00 app[web.1]:       { id: 'Iy3y1z5n4Cb50a616kRUQX|0000003',
+2017-11-11T02:44:33.211402+00:00 app[web.1]:         channelId: 'skype',
+2017-11-11T02:44:33.211402+00:00 app[web.1]:         user: [Object],
+2017-11-11T02:44:33.211403+00:00 app[web.1]:         bot: [Object],
+2017-11-11T02:44:33.211403+00:00 app[web.1]:         serviceUrl: 'https://webchat.botframework.com/',
+2017-11-11T02:44:33.211404+00:00 app[web.1]:         conversation: [Object] },
+2017-11-11T02:44:33.211404+00:00 app[web.1]:      source: 'skype',
+2017-11-11T02:44:33.211405+00:00 app[web.1]:      text: 'This message sent by Skype Bot triggered by DirectLineJS API with hardcoded conversation.id' } }
+2017-11-11T02:44:33.211616+00:00 app[web.1]: { id: 'Iy3y1z5n4Cb50a616kRUQX|0000003',
+2017-11-11T02:44:33.211616+00:00 app[web.1]:   channelId: 'skype',
+2017-11-11T02:44:33.211617+00:00 app[web.1]:   user: { id: 'CrnkcJeeQ3e', name: 'You' },
+2017-11-11T02:44:33.211617+00:00 app[web.1]:   bot: { id: 'kanapka', name: 'Kanapka' },
+2017-11-11T02:44:33.211617+00:00 app[web.1]:   serviceUrl: 'https://webchat.botframework.com/',
+2017-11-11T02:44:33.211618+00:00 app[web.1]:   conversation: { id: '19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype' } }
+2017-11-11T02:44:33.211699+00:00 app[web.1]: { id: '19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype' }
+2017-11-11T02:44:33.869610+00:00 app[web.1]: Error: Request to 'https://webchat.botframework.com/v3/conversations/19%3A8ee6791956ef48dfbbd69009c1c91f1b%40thread.skype/activities' failed: [400] Bad Request
+2017-11-11T02:44:33.869630+00:00 app[web.1]:     at Request._callback (/app/node_modules/botbuilder/lib/bots/ChatConnector.js:532:46)
+2017-11-11T02:44:33.869631+00:00 app[web.1]:     at Request.self.callback (/app/node_modules/request/request.js:186:22)
+2017-11-11T02:44:33.869633+00:00 app[web.1]:     at emitTwo (events.js:106:13)
+2017-11-11T02:44:33.869633+00:00 app[web.1]:     at Request.emit (events.js:191:7)
+2017-11-11T02:44:33.869634+00:00 app[web.1]:     at Request.<anonymous> (/app/node_modules/request/request.js:1163:10)
+2017-11-11T02:44:33.869635+00:00 app[web.1]:     at emitOne (events.js:96:13)
+2017-11-11T02:44:33.869635+00:00 app[web.1]:     at Request.emit (events.js:188:7)
+2017-11-11T02:44:33.869636+00:00 app[web.1]:     at IncomingMessage.<anonymous> (/app/node_modules/request/request.js:1085:12)
+2017-11-11T02:44:33.869637+00:00 app[web.1]:     at IncomingMessage.g (events.js:292:16)
+2017-11-11T02:44:33.869637+00:00 app[web.1]:     at emitNone (events.js:91:20)
+
+
+
+I added @Kanapka and @Face Bot to chat, and later, as Andrii Lundiak changed topic name:
+2017-11-12T11:38:43.986983+00:00 heroku[router]: at=info method=POST path="/api/messages" host=kanapka-bot.herokuapp.com request_id=af4e5262-39a0-46fd-a698-ad661cf78f57 fwd="52.164.229.112" dyno=web.1 connect=0ms service=3ms status=202 bytes=124 protocol=https
+2017-11-12T11:38:43.987052+00:00 app[web.1]: { topicName: 'bots',
+2017-11-12T11:38:43.987066+00:00 app[web.1]:   type: 'conversationUpdate',
+2017-11-12T11:38:43.987067+00:00 app[web.1]:   timestamp: '2017-11-12T11:38:43.94Z',
+2017-11-12T11:38:43.987069+00:00 app[web.1]:   text: '',
+2017-11-12T11:38:43.987070+00:00 app[web.1]:   attachments: [],
+2017-11-12T11:38:43.987070+00:00 app[web.1]:   entities: [],
+2017-11-12T11:38:43.987071+00:00 app[web.1]:   address: 
+2017-11-12T11:38:43.987071+00:00 app[web.1]:    { id: 'f:2239f1f8',
+2017-11-12T11:38:43.987072+00:00 app[web.1]:      channelId: 'skype',
+2017-11-12T11:38:43.987073+00:00 app[web.1]:      user: { id: '29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI' },
+2017-11-12T11:38:43.987074+00:00 app[web.1]:      conversation: 
+2017-11-12T11:38:43.987075+00:00 app[web.1]:       { isGroup: true,
+2017-11-12T11:38:43.987075+00:00 app[web.1]:         id: '19:0e1910b63ba1476ab2b3706dc72cb0f2@thread.skype' },
+2017-11-12T11:38:43.987076+00:00 app[web.1]:      bot: 
+2017-11-12T11:38:43.987077+00:00 app[web.1]:       { id: '28:d60d43ae-da6d-406a-8bcb-97bcb8e29cfe',
+2017-11-12T11:38:43.987078+00:00 app[web.1]:         name: 'Kanapka' },
+2017-11-12T11:38:43.987078+00:00 app[web.1]:      serviceUrl: 'https://smba.trafficmanager.net/apis/' },
+2017-11-12T11:38:43.987079+00:00 app[web.1]:   source: 'skype',
+2017-11-12T11:38:43.987080+00:00 app[web.1]:   agent: 'botbuilder',
+2017-11-12T11:38:43.987080+00:00 app[web.1]:   user: { id: '29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI' } }

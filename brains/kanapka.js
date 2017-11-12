@@ -251,8 +251,10 @@ module.exports = function(connector) {
             delete changedAddress.conversation;
             changedAddress.conversation = {
                 // id: "29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI" // - me
-                id: "19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype" // - chat
+                // id: "19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype" // - chat Face PoC Devs
+                id: '19:0e1910b63ba1476ab2b3706dc72cb0f2@thread.skype' // chat "bots"
             };
+            changedAddress.user = { id: 'python-user', name: 'Python User' };
             changedAddress.bot = { id: 'kanapka', name: 'Kanapka' };
 
             var msg = new builder.Message().address(changedAddress);
