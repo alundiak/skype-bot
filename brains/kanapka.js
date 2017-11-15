@@ -250,6 +250,7 @@ module.exports = function(connector) {
             changedAddress.channelId = 'skype';
             delete changedAddress.conversation;
             changedAddress.conversation = {
+                isGroup: true,
                 // id: "29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI" // - me
                 // id: "19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype" // - chat Face PoC Devs
                 id: '19:0e1910b63ba1476ab2b3706dc72cb0f2@thread.skype' // chat "bots"
@@ -258,7 +259,7 @@ module.exports = function(connector) {
             changedAddress.bot = { id: 'kanapka', name: 'Kanapka' };
 
             var msg = new builder.Message().address(changedAddress);
-            msg.text("This message sent by Skype Bot triggered by DirectLineJS API with hardcoded conversation.id");
+            msg.text("This message sent by Skype Bot triggered by REST POST request to SkypeBot API with hardcoded conversation.id");
             console.log(msg);
             console.log(msg.data.address);
             console.log(msg.data.address.conversation);

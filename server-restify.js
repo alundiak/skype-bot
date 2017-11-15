@@ -41,6 +41,13 @@ var server = restify.createServer({
 //     version: '1.0.0'
 // });
 
+// var httpsServer = https.createServer({
+//     name: 'just-skype-bot-https',
+//     version: '1.0.0',
+//     key: keyFile,
+//     certificate: certFile, // this way, server.url is HTTPS and HTTPS works good.
+// });
+
 // Setup HTTPS Restify Server
 // var httpsServer = restify.createServer({
 //     name: 'skype-bot-https',
@@ -62,7 +69,7 @@ var connector = new builder.ChatConnector({
 
 
 var youSaidLogic = function(session) {
-	// console.log(session);
+    // console.log(session);
     session.send("You said: %s", session.message.text);
 };
 
@@ -78,7 +85,7 @@ server.post('/api/messages', connector.listen());
 
 var setup_server = function(app) {
     function respond(req, res, next) {
-    	console.log('respond CALL', req.params);
+        console.log('respond CALL', req.params);
         res.send('I see you ' + req.params.name);
     }
 
@@ -99,7 +106,7 @@ server.listen(restifyServerPort, function() {
     console.log('%s listening to %s', server.name, server.url);
 });
 
-// httpsServer.listen(restifyHttpsServerPort, function() {
-//     // console.log(httpsServer);
-//     console.log('%s listening to %s', httpsServer.name, httpsServer.url);
-// });
+httpsServer.listen(restifyHttpsServerPort, function() {
+    // console.log(httpsServer);
+    console.log('%s listening to %s', httpsServer.name, httpsServer.url);
+});

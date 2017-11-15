@@ -20,7 +20,7 @@ function setupSkypeBot() {
         $.ajax(url, {
             method: 'post',
             data: messageBody,
-            crossorigin: true,
+            crossDomain: true,
             success: function(a,b) {
                 console.log(a,b)
             },

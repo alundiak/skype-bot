@@ -217,7 +217,7 @@ I added @Kanapka and @Face Bot to chat, and later, as Andrii Lundiak changed top
 2017-11-12T11:38:43.987071+00:00 app[web.1]:   address: 
 2017-11-12T11:38:43.987071+00:00 app[web.1]:    { id: 'f:2239f1f8',
 2017-11-12T11:38:43.987072+00:00 app[web.1]:      channelId: 'skype',
-2017-11-12T11:38:43.987073+00:00 app[web.1]:      user: { id: '29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI' },
+2017-11-12T11:38:43.987073+00:00 app[web.1]:      user: { id: '29:1HTjE6Ul1MDfAz...o9vRtvmHnI' },
 2017-11-12T11:38:43.987074+00:00 app[web.1]:      conversation: 
 2017-11-12T11:38:43.987075+00:00 app[web.1]:       { isGroup: true,
 2017-11-12T11:38:43.987075+00:00 app[web.1]:         id: '19:0e1910b63ba1476ab2b3706dc72cb0f2@thread.skype' },

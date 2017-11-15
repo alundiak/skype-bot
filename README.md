@@ -79,3 +79,4 @@ curl -k -X POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/t
 - https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart
 - https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
 - https://chatbotslife.com/how-to-create-a-restaurant-chatbot-part-1-2021d4caec36
+- https://cthakkar.wordpress.com/2016/06/11/bot-framework-bot-connector-features/
