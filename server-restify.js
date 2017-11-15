@@ -106,7 +106,7 @@ server.listen(restifyServerPort, function() {
     console.log('%s listening to %s', server.name, server.url);
 });
 
-httpsServer.listen(restifyHttpsServerPort, function() {
-    // console.log(httpsServer);
-    console.log('%s listening to %s', httpsServer.name, httpsServer.url);
-});
+// httpsServer.listen(restifyHttpsServerPort, function() {
+//     // console.log(httpsServer);
+//     console.log('%s listening to %s', httpsServer.name, httpsServer.url);
+// });
