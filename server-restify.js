@@ -58,6 +58,7 @@ var server = restify.createServer({
 //         key: keyFile,
 //         cert: certFile // this way, server.url is HTTP and HTTPS server works in fact
 //         // certificate: certFile // this way, server.url is HTTP BUT HTTPS server doesn't work => ERR_SSL_VERSION_OR_CIPHER_MISMATCH
+//         // because "cert" is valid property of https, and NOT necessary restify should have the same value of field.
 //     }
 // });
 

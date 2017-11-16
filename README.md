@@ -41,6 +41,7 @@ NodeJS based Skype bot to create activity in chats
 - https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/core-DirectLine
 - https://github.com/Microsoft/BotFramework-DirectLineJS
 - https://github.com/ryanvolum/backChannelBot
+- https://github.com/Microsoft/BotBuilder/issues/507. -note about headers using `beforeSend()`
 
 ## Bot Related Services
 - [Bot Framework Portal](https://dev.botframework.com/) (where we have [My Bots](https://dev.botframework.com/bots) page)
@@ -50,10 +51,29 @@ NodeJS based Skype bot to create activity in chats
 
 
 ## Curl
-https://docs.microsoft.com/en-us/bot-framework/troubleshoot-authentication-problems
+- https://docs.microsoft.com/en-us/bot-framework/troubleshoot-authentication-problems
+
 ```
 curl -k -X POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token -d "grant_type=client_credentials&client_id=APP_ID&client_secret=APP_PASSWORD&scope=https%3A%2F%2Fapi.botframework.com%2F.default"
 ```
+works. but so what? No CORS?
+
+- https://github.com/rlidwka/sinopia/issues/329
+
+```
+Creating a user
+curl -s \ -H "Accept: application/json" \ -H "Content-Type:application/json" \ -X PUT --data '{"name": "username", "password": "password"}' \ http://registry/-/user/org.couchdb.user:username
+
+Login existing user
+curl -s \ -H "Accept: application/json" \ -H "Content-Type:application/json" \ -X PUT --data '{"name": "username", "password": "password"}' \ --user username:password \ http://registry/-/user/org.couchdb.user:username
+```
+
+- https://stackoverflow.com/questions/41832641/parsing-an-http-response-from-a-curl-post
+
+```
+curl -L -H 'X-Cisco-Meraki-API-Key: mykeygoeshere' -X POST -H'Content-Type: application/json' --data-binary '{"name":"'"$NETWORK_NAME"'", "type":"appliance", "timeZone":"'"$TIME_ZONE"'"}' 'https://dashboard.meraki.com/api/v0/organizations/foobar/networks'
+```
+
 
 ## Deployment to Heroku
 - Locally, to works with http, but on remote Heroku instance, it requires https, to be called from Skype API.
@@ -69,14 +89,35 @@ curl -k -X POST https://login.microsoftonline.com/botframework.com/oauth2/v2.0/t
 ## Azure based things
 - [Azure](https://portal.azure.com/)
 - https://docs.microsoft.com/en-us/bot-framework/deploy-bot-github
+- https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest => `brew install azure-cli`
+
+
+## CORS
+- https://github.com/expressjs/cors fro NodeJS
+- https://stackoverflow.com/questions/38317973/no-access-control-allow-origin-header-with-microsoft-online-auth
+Looks like hosting on Heroku or from localhost resuires Azure deployment.
+>Your not going to be able to run that from the client. Part of the CORS setup requires that microsoftonline.com adds your domain to their CORS supported whitelist. I would suggest that you make a call a service on your server, which then makes the request server to server. 
+
+- https://github.com/Microsoft/BotBuilder/issues/3510
+Looks like people use POST requests to `api/messages` URL.
+
+- https://social.msdn.microsoft.com/Forums/sqlserver/en-US/443e15fc-241d-4158-a44c-4573a07f14e6/azure-ad-authentication-for-cors-requests?forum=windowsazurewebsitespreview
 
 ## Other
 - Skype Bot using Python ad Skype4Py - https://github.com/opensourcehacker/sevabot
 - Skype Bot using simple Python - https://github.com/puneetsngh/pythonSkypeBot
 - Skype Bot using Java and Skype Kit (gone) - https://github.com/toomasr/skype-bot
 
+## GitHub issues with my comments
+- 
+- https://github.com/Microsoft/BotBuilder/issues/3756 - Getting 400 "Bad Request" error when sending messages to Messenger channel
+- https://github.com/Microsoft/BotBuilder/issues/507 - Error in Bot Framework Directline connector
+- https://github.com/IdentityModel/oidc-client-js/issues/437 - looks like OpenID/IdentyModel doesn't support CORS
+
 ## Resources
 - https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart
 - https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator
 - https://chatbotslife.com/how-to-create-a-restaurant-chatbot-part-1-2021d4caec36
 - https://cthakkar.wordpress.com/2016/06/11/bot-framework-bot-connector-features/
+- https://stackoverflow.com/questions/40523254/how-to-get-conversation-details-in-microsoft-bot-framework-for-skype
+- https://stackoverflow.com/questions/38317973/no-access-control-allow-origin-header-with-microsoft-online-auth
