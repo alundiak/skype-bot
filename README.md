@@ -121,3 +121,4 @@ Looks like people use POST requests to `api/messages` URL.
 - https://cthakkar.wordpress.com/2016/06/11/bot-framework-bot-connector-features/
 - https://stackoverflow.com/questions/40523254/how-to-get-conversation-details-in-microsoft-bot-framework-for-skype
 - https://stackoverflow.com/questions/38317973/no-access-control-allow-origin-header-with-microsoft-online-auth
+- https://tsmatz.wordpress.com/2016/08/19/build-skype-bot-with-microsoft-bot-framework-oauth-and-rest-api/

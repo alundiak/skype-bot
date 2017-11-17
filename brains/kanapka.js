@@ -220,8 +220,6 @@ module.exports = function(connector) {
             console.log(session.message);
             console.log('\n<<<===\nMESSAGE\n<<<===\n');
 
-            console.log('\n<<<===\PYTHON USER ?\n<<<===\n');
-
             // var msgEvent = new builder.Message().address(session.message.address);
             // msgEvent.data.type = "event";
             // msgEvent.data.name = "alertSkypeChat";
@@ -255,19 +253,17 @@ module.exports = function(connector) {
                 // id: "19:8ee6791956ef48dfbbd69009c1c91f1b@thread.skype" // - chat Face PoC Devs
                 id: '19:0e1910b63ba1476ab2b3706dc72cb0f2@thread.skype' // chat "bots"
             };
-            changedAddress.user = { id: 'python-user', name: 'Python User' };
-            changedAddress.bot = { id: 'kanapka', name: 'Kanapka' };
+            changedAddress.user = { id: 'kanapka-brain-user', name: 'Kanapka Brain User' };
+            changedAddress.bot = { id: '28:d60d43ae-da6d-406a-8bcb-97bcb8e29cfe', name: 'Kanapka' };
 
             var msg = new builder.Message().address(changedAddress);
-            msg.text("This message sent by Skype Bot triggered by REST POST request to SkypeBot API with hardcoded conversation.id");
+            msg.text("This message sent by Skype Bot triggered by Dialog 'eat' with Bot via Kanapka Brain with hardcoded conversation.id");
+            console.log('\nNEW MESSAGE\n');
             console.log(msg);
             console.log(msg.data.address);
-            console.log(msg.data.address.conversation);
             // msg.data.name = "alertSkypeChat";
             // msg.data.value = 'testValue';
             session.send(msg);
-
-            // session.send("Maybe order kanapka?");
         }
     });
 
