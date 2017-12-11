@@ -37,27 +37,59 @@ module.exports = function(connector) {
 
     // https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events
     bot.on('conversationUpdate', function(message) {
+        console.log('\n===>>>\nMESSAGE\n===>>>\n');
         console.log(message);
+        console.log('\n<<<===\nMESSAGE\n<<<===\n');
+
+        console.log('\n<<<===\nCONVERSATION\n<<<===\n');
+        console.log(message.address.conversation);
+        console.log('\n<<<===\nCONVERSATION\n<<<===\n');
+
+        var botId = message.address.bot.id;
+        var isGroup = message.address.conversation.isGroup;
+        var conversationIdBackup = message.address.conversation.id;
+
         // why message.membersAdded here when I restart localhost emulator or refresh page with DirectLine request?
         if (message.membersAdded && message.membersAdded.length > 0) {
+            var filtered = message.membersAdded.filter(function(member){
+                return member.id == botId
+            })
+
+            if (!filtered.length){
+                return
+            }
+
+            console.log('\n<<<===\nCONVERSATION AFTER NEW ADD to the chat\n<<<===\n');
+            console.log(message.address.conversation);
+            console.log('\n<<<===\nCONVERSATION AFTER NEW ADD to the chat\n<<<===\n');
+
             // Say hello
-            var isGroup = message.address.conversation.isGroup;
-            console.log('IS GROUP: ' + isGroup);
             var txt = isGroup ? "Hello everyone!" : "Conversion updated... Members added: " + message.membersAdded[0].name;
-            var reply = new builder.Message()
+            var reply1 = new builder.Message()
                 .address(message.address)
                 .text(txt);
-            bot.send(reply);
+            bot.send(reply1);
+
+            var changedAddress = message.address;
+            changedAddress.conversation = {
+                isGroup: false,
+                id: "29:1HTjE6Ul1MDfAzZcwrUrvAclC8pREzF_b8o9vRtvmHnI" // - Andrii Lundiak (lan_researcher)
+                // id: '29:1DZUK5A5MG17YCBWOkFc_2zI_2nH9AyMkxO-gKoumDRI' // - Igor Tyshchenko (@igor.tyschenko)
+            };
+            var reply2 = new builder.Message()
+                .address(changedAddress)
+                .text('Kanapka bot added to new chat. CONVERSATION_ID: '+ conversationIdBackup);
+            bot.send(reply2);
+
         } else if (message.membersRemoved) {
             // See if bot was removed
-            var botId = message.address.bot.id;
+            message.text = "Goodbye."; // doesn't work
             for (var i = 0; i < message.membersRemoved.length; i++) {
                 if (message.membersRemoved[i].id === botId) {
-                    // Say goodbye
-                    var reply = new builder.Message()
+                    var reply3 = new builder.Message()
                         .address(message.address)
-                        .text("Goodbye. Kanapka will be missing you :(");
-                    bot.send(reply);
+                        .text("Goodbye. Kanapka will be missing you :("); // doesn't work
+                    bot.send(reply3);
                     break;
                 }
             }
@@ -246,6 +278,9 @@ module.exports = function(connector) {
 
             var changedAddress = session.message.address;
             changedAddress.channelId = 'skype';
+            console.log("LOG !!!!!!!!!!!!!!!");
+            console.log(changedAddress.conversation);
+            console.log("LOG !!!!!!!!!!!!!!!");
             delete changedAddress.conversation;
             changedAddress.conversation = {
                 isGroup: true,
