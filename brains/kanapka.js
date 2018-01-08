@@ -85,7 +85,7 @@ module.exports = function(connector) {
             // See if bot was removed
             message.text = "Goodbye."; // doesn't work
             for (var i = 0; i < message.membersRemoved.length; i++) {
-                if (message.membersRemoved[i].id === botId) {
+                if (message.membersRemoved[i].id !== botId) {
                     var reply3 = new builder.Message()
                         .address(message.address)
                         .text("Goodbye. Kanapka will be missing you :("); // doesn't work
