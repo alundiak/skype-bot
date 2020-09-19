@@ -1,7 +1,7 @@
 NodeJS based Skype bot to create activity in chats
 ===
 
-## Main NodeJS Dependencies 
+## Main NodeJS Dependencies
 - [botbuilder](https://github.com/Microsoft/BotBuilder)
 - [restify](https://github.com/restify/node-restify)
 
@@ -32,7 +32,7 @@ NodeJS based Skype bot to create activity in chats
 ## NodeJS based Bot Examples
 - https://github.com/kiramishima/acopiobot
 
-## SSL Self-Signed Certificate 
+## SSL Self-Signed Certificate
 - [Quick guide on how to set up a self-signed SSL certificate on Ubuntu](http://qugstart.com/blog/linux/quickest-way-to-create-a-self-signed-ssl-certificate-in-ubuntu/)
 - [Node.js and RESTify Server with both HTTP and HTTPS](http://qugstart.com/blog/node-js/node-js-restify-server-with-both-http-and-https/)
 
@@ -95,8 +95,8 @@ curl -L -H 'X-Cisco-Meraki-API-Key: mykeygoeshere' -X POST -H'Content-Type: appl
 ## CORS
 - https://github.com/expressjs/cors fro NodeJS
 - https://stackoverflow.com/questions/38317973/no-access-control-allow-origin-header-with-microsoft-online-auth
-Looks like hosting on Heroku or from localhost resuires Azure deployment.
->Your not going to be able to run that from the client. Part of the CORS setup requires that microsoftonline.com adds your domain to their CORS supported whitelist. I would suggest that you make a call a service on your server, which then makes the request server to server. 
+Looks like hosting on Heroku or from localhost requires Azure deployment.
+>Your not going to be able to run that from the client. Part of the CORS setup requires that microsoftonline.com adds your domain to their CORS supported whitelist. I would suggest that you make a call a service on your server, which then makes the request server to server.
 
 - https://github.com/Microsoft/BotBuilder/issues/3510
 Looks like people use POST requests to `api/messages` URL.
@@ -108,8 +108,14 @@ Looks like people use POST requests to `api/messages` URL.
 - Skype Bot using simple Python - https://github.com/puneetsngh/pythonSkypeBot
 - Skype Bot using Java and Skype Kit (gone) - https://github.com/toomasr/skype-bot
 
+# NLP
+- https://github.com/axa-group/nlp.js
+
+## Bot API v4 vs. ngrok
+- https://blog.botframework.com/2017/10/19/debug-channel-locally-using-ngrok/ - Debug any Channel locally using ngrok
+- https://github.com/Microsoft/BotBuilder/issues/4730
+
 ## GitHub issues with my comments
-- 
 - https://github.com/Microsoft/BotBuilder/issues/3756 - Getting 400 "Bad Request" error when sending messages to Messenger channel
 - https://github.com/Microsoft/BotBuilder/issues/507 - Error in Bot Framework Directline connector
 - https://github.com/IdentityModel/oidc-client-js/issues/437 - looks like OpenID/IdentyModel doesn't support CORS
